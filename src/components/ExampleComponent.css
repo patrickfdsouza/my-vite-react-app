@@ -1,99 +1,69 @@
-.example-container {
-  border: 1px solid #ddd;
-  border-radius: 12px;
-  padding: 32px 24px;
-  max-width: 600px;
-  margin: 32px auto;
-  background: linear-gradient(135deg, #f8fafc 60%, #e3f2fd 100%);
-  box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+.example-widget {
+  max-width: 720px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  background: linear-gradient(145deg, #ffffff 0%, #f3f7ff 100%);
+  border: 1px solid #dbe6ff;
+  box-shadow: 0 14px 30px rgba(20, 53, 120, 0.12);
 }
 
-.example-title {
-  font-size: 2rem;
-  margin-bottom: 24px;
-  color: #1976d2;
-  text-align: center;
-  letter-spacing: 1px;
-}
-
-.example-list {
-  background: #fff;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(25, 118, 210, 0.06);
-  padding: 8px 0;
-  margin-bottom: 24px;
-}
-
-.example-item {
-  padding: 10px 24px;
-  border-bottom: 1px solid #f0f0f0;
-  transition: background 0.2s;
-}
-
-.example-item:last-child {
-  border-bottom: none;
-}
-
-.example-item:hover {
-  background: #e3f2fd;
-}
-
-.card-row {
+.widget-header {
   display: flex;
-  gap: 20px;
-  margin-bottom: 24px;
-  justify-content: center;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.75rem;
   flex-wrap: wrap;
 }
 
-.example-card {
+.widget-kicker {
+  letter-spacing: 0.08em;
+  color: #4b6aa8;
+}
+
+.widget-title {
+  font-weight: 700;
+  color: #11254f;
+}
+
+.metric-grid {
+  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 0.9rem;
+}
+
+.metric-card {
   background: #fff;
-  border: 1.5px solid #90caf9;
-  border-radius: 10px;
-  padding: 18px 10px;
-  width: 150px;
-  min-height: 120px;
-  box-shadow: 0 2px 12px rgba(25, 118, 210, 0.08);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  transition: transform 0.15s, box-shadow 0.15s;
+  border: 1px solid #e2ebff;
+  border-radius: 0.85rem;
+  padding: 1rem;
 }
 
-.example-card:hover {
-  transform: translateY(-4px) scale(1.03);
-  box-shadow: 0 6px 24px rgba(25, 118, 210, 0.15);
-  border-color: #1976d2;
+.metric-label {
+  font-size: 0.82rem;
+  color: #5672a5;
 }
 
-.card-title {
-  font-size: 1.15rem;
-  margin-bottom: 8px;
-  color: #1976d2;
+.metric-value {
+  color: #15366c;
+  font-weight: 700;
+}
+
+.metric-caption {
+  color: #208457;
+  font-size: 0.8rem;
+}
+
+.task-heading {
   font-weight: 600;
+  margin-bottom: 0.65rem;
+  color: #11254f;
 }
 
-.card-desc {
-  font-size: 1rem;
-  color: #444;
-  text-align: center;
-}
-
-.example-button {
-  padding: 10px 28px;
-  background: #1976d2;
-  color: #fff;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  font-size: 1.1rem;
-  margin: 0 auto;
-  display: block;
-  box-shadow: 0 2px 8px rgba(25, 118, 210, 0.08);
-  transition: background 0.2s, box-shadow 0.2s;
-}
-
-.example-button:hover {
-  background: #1565c0;
-  box-shadow: 0 4px 16px rgba(25, 118, 210, 0.15);
+.task-row {
+  padding: 0.45rem 0.6rem;
+  background: #f8fbff;
+  border: 1px solid #e4edff;
+  border-radius: 0.6rem;
 }

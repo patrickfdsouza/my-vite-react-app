@@ -1,65 +1,79 @@
 import React from 'react';
 import './ExampleComponent.css';
-import Button from '@mui/material/Button';
-import Card from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
-import Typography from '@mui/material/Typography';
-import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
+import {
+  Avatar,
+  Box,
+  Button,
+  Chip,
+  Divider,
+  LinearProgress,
+  Stack,
+  Typography,
+} from '@mui/material';
+import TrendingUpIcon from '@mui/icons-material/TrendingUp';
+import Inventory2Icon from '@mui/icons-material/Inventory2';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
+
+const topTasks = [
+  'Review Q2 performance snapshot',
+  'Resolve 3 delayed shipments',
+  'Send weekly growth summary',
+];
 
 const ExampleComponent = () => {
   return (
-    <div className="example-container bg-blue-100 p-4 rounded-lg mx-auto">
-      <h2 className="example-title text-2xl md:text-3xl font-bold text-blue-700 text-center mb-6">
-        Welcome to the Example Component
-      </h2>
-      <List className="example-list mb-6">
-        <ListItem className="example-item">
-          <ListItemIcon>
-            <CheckCircleIcon color="primary" />
-          </ListItemIcon>
-          <ListItemText primary="Item 1" />
-        </ListItem>
-        <ListItem className="example-item">
-          <ListItemIcon>
-            <CheckCircleIcon color="primary" />
-          </ListItemIcon>
-          <ListItemText primary="Item 2" />
-        </ListItem>
-        <ListItem className="example-item">
-          <ListItemIcon>
-            <CheckCircleIcon color="primary" />
-          </ListItemIcon>
-          <ListItemText primary="Item 3" />
-        </ListItem>
-      </List>
-      <div className="card-row flex flex-col md:flex-row gap-4 justify-center mb-6">
-        <Card className="example-card flex-1 min-w-[200px]">
-          <CardContent>
-            <Typography className="card-title text-lg font-semibold text-blue-700 mb-2" variant="h6">Card 1</Typography>
-            <Typography className="card-desc text-base text-gray-700">This is the first card.</Typography>
-          </CardContent>
-        </Card>
-        <Card className="example-card flex-1 min-w-[200px]">
-          <CardContent>
-            <Typography className="card-title text-lg font-semibold text-blue-700 mb-2" variant="h6">Card 2</Typography>
-            <Typography className="card-desc text-base text-gray-700">This is the second card.</Typography>
-          </CardContent>
-        </Card>
-        <Card className="example-card flex-1 min-w-[200px]">
-          <CardContent>
-            <Typography className="card-title text-lg font-semibold text-blue-700 mb-2" variant="h6">Card 3</Typography>
-            <Typography className="card-desc text-base text-gray-700">This is the third card.</Typography>
-          </CardContent>
-        </Card>
-      </div>
-      <Button className="example-button w-full sm:w-auto" variant="contained" color="primary">
-        Click Me
+    <Box className="example-widget" component="section">
+      <Box className="widget-header">
+        <Stack direction="row" spacing={1} alignItems="center">
+          <Avatar sx={{ width: 32, height: 32, bgcolor: 'primary.main' }}>
+            <TrendingUpIcon fontSize="small" />
+          </Avatar>
+          <Box>
+            <Typography variant="overline" className="widget-kicker">
+              Team Dashboard
+            </Typography>
+            <Typography variant="h5" className="widget-title">
+              Weekly Operations
+            </Typography>
+          </Box>
+        </Stack>
+        <Chip label="+12.4% vs last week" color="success" size="small" />
+      </Box>
+
+      <Box className="metric-grid">
+        <Box className="metric-card">
+          <Typography className="metric-label">Revenue</Typography>
+          <Typography variant="h4" className="metric-value">$48.2K</Typography>
+          <Typography className="metric-caption">On track with target</Typography>
+        </Box>
+        <Box className="metric-card">
+          <Stack direction="row" spacing={1} alignItems="center">
+            <Inventory2Icon color="primary" fontSize="small" />
+            <Typography className="metric-label">Fulfillment</Typography>
+          </Stack>
+          <Typography variant="h4" className="metric-value">93%</Typography>
+          <LinearProgress variant="determinate" value={93} sx={{ mt: 1, borderRadius: 5, height: 8 }} />
+        </Box>
+      </Box>
+
+      <Divider sx={{ my: 2 }} />
+
+      <Box>
+        <Typography className="task-heading">Priority checklist</Typography>
+        <Stack spacing={1.2}>
+          {topTasks.map((task) => (
+            <Stack className="task-row" key={task} direction="row" spacing={1.2} alignItems="center">
+              <CheckCircleIcon color="success" fontSize="small" />
+              <Typography variant="body2">{task}</Typography>
+            </Stack>
+          ))}
+        </Stack>
+      </Box>
+
+      <Button variant="contained" size="large" fullWidth sx={{ mt: 3, textTransform: 'none' }}>
+        Open Detailed Report
       </Button>
-    </div>
+    </Box>
   );
 };
 
